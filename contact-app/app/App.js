@@ -1,7 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import {render} from 'react-dom';
 
-// Main component. Renders a SearchBar and a ContactList
+// Main (stateful) component.
+// Renders a SearchBar and a ContactList
+// Passes down filterText state and handkeUserInput callback as props
 class ContactsApp extends Component {
     constructor() {
         super();
@@ -10,10 +12,15 @@ class ContactsApp extends Component {
         };
     }
 
+    handleUserInput(searchTerm) {
+        this.setState({filterText: searchTerm})
+    }
+
     render() {
         return (
             <div>
-                <SearchBar filterText={this.state.filterText} />
+                <SearchBar filterText={this.state.filterText}
+                           onUserInput={this.handleUserInput.bind(this)} />
                 <ContactList contacts={this.props.contacts}
                              filterText={this.state.filterText} />
             </div>
@@ -24,17 +31,31 @@ ContactsApp.propTypes = {
     contacts: PropTypes.arrayOf(PropTypes.object)
 }
 
+// Pure component that receives 2 props from the parent
+// filterText (string) and onUserInput (callbakc function)
 class SearchBar extends Component {
+    handleChange(event) {
+        this.props.onUserInput(event.target.value)
+    }
+
     render() {
-        return <input type="search" placeholder="search"
-                      value={this.props.filterText} />
+        return <input type="search"
+                      placeholder="search"
+                      value={this.props.filterText}
+                      onChange={this.handleChange.bind(this)} />
     }
 }
 // Don't forget to add teh new propType requirements
 SearchBar.propTypes = {
+    onUserInput: PropTypes.func.isRequired,
     filterText: PropTypes.string.isRequired
 }
 
+// Pure component that receives both contacts and filterText as porps
+// The component is responsible for actual filtering the
+// contacts before displaying them.
+// It's considered a pure component because given the same
+// contacts and filterText props the output will always be the same
 class ContactList extends Component {
     render() {
         let filteredContacts = this.props.contacts.filter(
