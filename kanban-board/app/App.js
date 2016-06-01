@@ -34,6 +34,14 @@ let cardsList = [
                 done: false
             }
         ]
+    },
+    {
+        id: 3,
+        title: "This is a very long title, and its length is over 80 characters. Trust me. This is totally wrong",
+        description: "This is a pretty long description",
+        color: 'blue',
+        status: 'done',
+        tasks: []
     }
 ];
 
