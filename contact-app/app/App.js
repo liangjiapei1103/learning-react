@@ -3,11 +3,19 @@ import {render} from 'react-dom';
 
 // Main component. Renders a SearchBar and a ContactList
 class ContactsApp extends Component {
+    constructor() {
+        super();
+        this.state = {
+            filterText: ''
+        };
+    }
+
     render() {
         return (
             <div>
-                <SearchBar />
-                <ContactList contacts={this.props.contacts} />
+                <SearchBar filterText={this.state.filterText} />
+                <ContactList contacts={this.props.contacts}
+                             filterText={this.state.filterText} />
             </div>
         );
     }
@@ -18,15 +26,24 @@ ContactsApp.propTypes = {
 
 class SearchBar extends Component {
     render() {
-        return <input type="search" placeholder="search" />
+        return <input type="search" placeholder="search"
+                      value={this.props.filterText} />
     }
+}
+// Don't forget to add teh new propType requirements
+SearchBar.propTypes = {
+    filterText: PropTypes.string.isRequired
 }
 
 class ContactList extends Component {
     render() {
+        let filteredContacts = this.props.contacts.filter(
+            (contact) => contact.name.indexOf(this.props.filterText) !== -1
+        );
+
         return (
             <ul>
-                {this.props.contacts.map(
+                {filteredContacts.map(
                     (contact) => <ContactItem key={contact.email}
                                               name={contact.name}
                                               email={contact.email} />
