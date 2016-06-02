@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import {render} from 'react-dom';
 
+// first we import some components
+import { Router, Route, IndexRoute, Link } from 'react-router';
+
 import About from './About';
 import Home from './Home';
 import Repos from './Repos';
@@ -22,31 +25,27 @@ class App extends Component {
     }
 
     render() {
-        var Child;
-        switch (this.state.route) {
-            case '/about':
-                Child = About;
-                break;
-            case '/repos':
-                Child = Repos;
-                break;
-            default:
-                Child = Home;
-        }
-
         return (
             <div>
                 <header>App</header>
                 <menu>
                     <ul>
-                        <li><a href="#/about">About</a></li>
-                        <li><a href="#/repos">Repos</a></li>
+                        <li><Link to="/about">About</Link></li>
+                        <li><Link to="/repos">Repos</Link></li>
                     </ul>
                 </menu>
-                <Child />
+                {this.props.children}
             </div>
         );
     }
 }
 
-render(<App />, document.getElementById('root'));
+render((
+    <Router>
+        <Route path="/" component={App}>
+            <IndexRoute component={Home} />
+            <Route path="about" component={About} />
+            <Route path="repos" component={Repos} />
+        </Route>
+    </Router>
+), document.getElementById('root'));
