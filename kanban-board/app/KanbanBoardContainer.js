@@ -3,6 +3,7 @@ import KanbanBoard from './KanbanBoard';
 import 'whatwg-fetch';
 import 'babel-polyfill';
 import update from 'react-addons-update';
+import { throttle } from './utils';
 
 // If you're running the server locally, the URL will be, by default, localhost:3000
 // Also, the local server doesn't need an authorization header.
@@ -18,6 +19,10 @@ class KanbanBoardContainer extends Component {
         this.state = {
             cards: [],
         };
+        // Only Call updateCardStatus when arguments change
+        this.updateCardStatus = throttle(this.updateCardStatus.bind(this));
+        // Call updateCardPosition at max 500ms (or when arguments change)
+        this.updateCardPosition = throttle(this.updateCardPosition.bind(this), 500);
     }
 
     componentDidMount() {
