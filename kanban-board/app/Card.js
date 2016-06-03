@@ -4,6 +4,7 @@ import marked from 'marked';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { DragSource, DropTarget } from 'react-dnd';
 import constants from './constants';
+import { Link } from 'react-router';
 
 let titlePropType = (props, propName, componentName) => {
     if (props[propName]) {
@@ -86,6 +87,8 @@ class Card extends Component {
 
         return connectDropTarget(connectDragSource(
             <div className="card">
+                {/* &#9998; is the HTML entity for the utf-8 pencil character (✎) */}
+                <div className="card__edit"><Link to={'/edit/'+this.props.id}>&#9998;</Link></div>
                 <div style={sideColor} />
                 <div className={
                     this.state.showDetails? "card__title card__title--is-open" : "card__title"

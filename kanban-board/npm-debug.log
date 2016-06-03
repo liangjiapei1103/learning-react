@@ -1,0 +1,219 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/liangjiapei/.nvm/v0.10.40/bin/node',
+1 verbose cli   '/Users/liangjiapei/.nvm/v0.10.40/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--save',
+1 verbose cli   'react-router@1,x,x',
+1 verbose cli   'history@1.x.x' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.40
+4 warn package.json kanban-board@0.1.4 No repository field.
+5 warn package.json assert@1.4.1 assert is also the name of a node core module.
+6 warn package.json babel-plugin-syntax-flow@6.8.0 No description
+7 warn package.json babel-plugin-syntax-jsx@6.8.0 No description
+8 warn package.json babel-polyfill@6.9.1 No description
+9 warn package.json babel-traverse@6.9.0 No description
+10 warn package.json buffer@3.6.0 buffer is also the name of a node core module.
+11 warn package.json events@1.1.0 events is also the name of a node core module.
+12 warn package.json indexof@0.0.1 No repository field.
+13 warn package.json punycode@1.4.1 punycode is also the name of a node core module.
+14 warn package.json querystring@0.2.0 querystring is also the name of a node core module.
+15 warn package.json string_decoder@0.10.31 string_decoder is also the name of a node core module.
+16 warn package.json url@0.10.3 url is also the name of a node core module.
+17 warn package.json util@0.10.3 util is also the name of a node core module.
+18 verbose readDependencies using package.json deps
+19 verbose cache add [ 'react-router@1,x,x', null ]
+20 verbose cache add name=undefined spec="react-router@1,x,x" args=["react-router@1,x,x",null]
+21 verbose parsed url { protocol: null,
+21 verbose parsed url   slashes: null,
+21 verbose parsed url   auth: null,
+21 verbose parsed url   host: null,
+21 verbose parsed url   port: null,
+21 verbose parsed url   hostname: null,
+21 verbose parsed url   hash: null,
+21 verbose parsed url   search: null,
+21 verbose parsed url   query: null,
+21 verbose parsed url   pathname: 'react-router@1,x,x',
+21 verbose parsed url   path: 'react-router@1,x,x',
+21 verbose parsed url   href: 'react-router@1,x,x' }
+22 verbose cache add [ 'history@1.x.x', null ]
+23 verbose cache add name=undefined spec="history@1.x.x" args=["history@1.x.x",null]
+24 verbose parsed url { protocol: null,
+24 verbose parsed url   slashes: null,
+24 verbose parsed url   auth: null,
+24 verbose parsed url   host: null,
+24 verbose parsed url   port: null,
+24 verbose parsed url   hostname: null,
+24 verbose parsed url   hash: null,
+24 verbose parsed url   search: null,
+24 verbose parsed url   query: null,
+24 verbose parsed url   pathname: 'history@1.x.x',
+24 verbose parsed url   path: 'history@1.x.x',
+24 verbose parsed url   href: 'history@1.x.x' }
+25 verbose cache add name="react-router" spec="1,x,x" args=["react-router","1,x,x"]
+26 verbose parsed url { protocol: null,
+26 verbose parsed url   slashes: null,
+26 verbose parsed url   auth: null,
+26 verbose parsed url   host: null,
+26 verbose parsed url   port: null,
+26 verbose parsed url   hostname: null,
+26 verbose parsed url   hash: null,
+26 verbose parsed url   search: null,
+26 verbose parsed url   query: null,
+26 verbose parsed url   pathname: '1,x,x',
+26 verbose parsed url   path: '1,x,x',
+26 verbose parsed url   href: '1,x,x' }
+27 verbose addNamed [ 'react-router', '1,x,x' ]
+28 verbose addNamed [ null, null ]
+29 verbose cache add name="history" spec="1.x.x" args=["history","1.x.x"]
+30 verbose parsed url { protocol: null,
+30 verbose parsed url   slashes: null,
+30 verbose parsed url   auth: null,
+30 verbose parsed url   host: null,
+30 verbose parsed url   port: null,
+30 verbose parsed url   hostname: null,
+30 verbose parsed url   hash: null,
+30 verbose parsed url   search: null,
+30 verbose parsed url   query: null,
+30 verbose parsed url   pathname: '1.x.x',
+30 verbose parsed url   path: '1.x.x',
+30 verbose parsed url   href: '1.x.x' }
+31 verbose addNamed [ 'history', '1.x.x' ]
+32 verbose addNamed [ null, '>=1.0.0-0 <2.0.0-0' ]
+33 silly lockFile a1d9a727-react-router-1-x-x react-router@1,x,x
+34 verbose lock react-router@1,x,x /Users/liangjiapei/.npm/cache/a1d9a727-react-router-1-x-x.lock
+35 silly lockFile 43d47a2b-history-1-x-x history@1.x.x
+36 verbose lock history@1.x.x /Users/liangjiapei/.npm/cache/43d47a2b-history-1-x-x.lock
+37 info addNameTag [ 'react-router', '1,x,x' ]
+38 silly addNameRange { name: 'history', range: '>=1.0.0-0 <2.0.0-0', hasData: false }
+39 verbose request where is /react-router
+40 verbose request registry https://registry.npmjs.org/
+41 verbose request id 58e5045ab83d2e93
+42 verbose url raw /react-router
+43 verbose url resolving [ 'https://registry.npmjs.org/', './react-router' ]
+44 verbose url resolved https://registry.npmjs.org/react-router
+45 verbose request where is https://registry.npmjs.org/react-router
+46 info trying registry request attempt 1 at 09:52:57
+47 verbose etag "A7SFVOPOR0IFL6GCQCV6V1DTU"
+48 http GET https://registry.npmjs.org/react-router
+49 verbose request where is /history
+50 verbose request registry https://registry.npmjs.org/
+51 verbose url raw /history
+52 verbose url resolving [ 'https://registry.npmjs.org/', './history' ]
+53 verbose url resolved https://registry.npmjs.org/history
+54 verbose request where is https://registry.npmjs.org/history
+55 info trying registry request attempt 1 at 09:52:57
+56 verbose etag "ECQJHYN1K5AW2UWEPBCT0VMH3"
+57 http GET https://registry.npmjs.org/history
+58 http 304 https://registry.npmjs.org/react-router
+59 silly registry.get cb [ 304,
+59 silly registry.get   { date: 'Fri, 03 Jun 2016 13:52:57 GMT',
+59 silly registry.get     via: '1.1 varnish',
+59 silly registry.get     'cache-control': 'max-age=300',
+59 silly registry.get     etag: '"A7SFVOPOR0IFL6GCQCV6V1DTU"',
+59 silly registry.get     age: '66',
+59 silly registry.get     connection: 'keep-alive',
+59 silly registry.get     'x-served-by': 'cache-dfw1835-DFW',
+59 silly registry.get     'x-cache': 'HIT',
+59 silly registry.get     'x-cache-hits': '1',
+59 silly registry.get     'x-timer': 'S1464961977.866924,VS0,VE0',
+59 silly registry.get     vary: 'Accept-Encoding' } ]
+60 verbose etag https://registry.npmjs.org/react-router from cache
+61 http 200 https://registry.npmjs.org/history
+62 silly registry.get cb [ 200,
+62 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+62 silly registry.get     etag: '"62VO68PRVRT1OJGX82O740E1J"',
+62 silly registry.get     'content-type': 'application/json',
+62 silly registry.get     'content-encoding': 'gzip',
+62 silly registry.get     'cache-control': 'max-age=300',
+62 silly registry.get     'content-length': '13033',
+62 silly registry.get     'accept-ranges': 'bytes',
+62 silly registry.get     date: 'Fri, 03 Jun 2016 13:52:57 GMT',
+62 silly registry.get     via: '1.1 varnish',
+62 silly registry.get     age: '0',
+62 silly registry.get     connection: 'keep-alive',
+62 silly registry.get     'x-served-by': 'cache-dfw1829-DFW',
+62 silly registry.get     'x-cache': 'HIT',
+62 silly registry.get     'x-cache-hits': '1',
+62 silly registry.get     'x-timer': 'S1464961977.865873,VS0,VE0',
+62 silly registry.get     vary: 'Accept-Encoding' } ]
+63 silly lockFile a1d9a727-react-router-1-x-x react-router@1,x,x
+64 silly lockFile a1d9a727-react-router-1-x-x react-router@1,x,x
+65 silly addNameRange number 2 { name: 'history', range: '>=1.0.0-0 <2.0.0-0', hasData: true }
+66 silly addNameRange versions [ 'history',
+66 silly addNameRange   [ '0.1.0',
+66 silly addNameRange     '1.0.0',
+66 silly addNameRange     '1.1.0',
+66 silly addNameRange     '1.2.0',
+66 silly addNameRange     '1.2.1',
+66 silly addNameRange     '1.2.2',
+66 silly addNameRange     '1.3.0',
+66 silly addNameRange     '1.3.1',
+66 silly addNameRange     '1.3.2',
+66 silly addNameRange     '1.3.3',
+66 silly addNameRange     '1.4.0',
+66 silly addNameRange     '1.4.1',
+66 silly addNameRange     '1.5.0',
+66 silly addNameRange     '1.6.0',
+66 silly addNameRange     '1.7.0',
+66 silly addNameRange     '1.8.0',
+66 silly addNameRange     '1.8.1',
+66 silly addNameRange     '1.8.2',
+66 silly addNameRange     '1.8.3',
+66 silly addNameRange     '1.8.4',
+66 silly addNameRange     '1.8.5',
+66 silly addNameRange     '1.9.0',
+66 silly addNameRange     '1.9.1',
+66 silly addNameRange     '1.10.0',
+66 silly addNameRange     '1.10.1',
+66 silly addNameRange     '1.10.2',
+66 silly addNameRange     '1.11.0',
+66 silly addNameRange     '1.11.1',
+66 silly addNameRange     '1.12.0',
+66 silly addNameRange     '1.12.1',
+66 silly addNameRange     '1.12.2',
+66 silly addNameRange     '1.12.3',
+66 silly addNameRange     '1.12.4',
+66 silly addNameRange     '1.12.5',
+66 silly addNameRange     '1.12.6',
+66 silly addNameRange     '1.13.0',
+66 silly addNameRange     '1.13.1',
+66 silly addNameRange     '1.14.0',
+66 silly addNameRange     '1.15.0',
+66 silly addNameRange     '1.16.0',
+66 silly addNameRange     '1.17.0',
+66 silly addNameRange     '2.0.0-rc1',
+66 silly addNameRange     '2.0.0-rc2',
+66 silly addNameRange     '2.0.0-rc3',
+66 silly addNameRange     '2.0.0',
+66 silly addNameRange     '2.0.1',
+66 silly addNameRange     '3.0.0-0',
+66 silly addNameRange     '2.0.2',
+66 silly addNameRange     '2.1.0',
+66 silly addNameRange     '3.0.0-1',
+66 silly addNameRange     '3.0.0-2',
+66 silly addNameRange     '2.1.1',
+66 silly addNameRange     '2.1.2',
+66 silly addNameRange     '3.0.0' ] ]
+67 verbose addNamed [ 'history', '1.17.0' ]
+68 verbose addNamed [ '1.17.0', '1.17.0' ]
+69 silly lockFile 495a4cb4-history-1-17-0 history@1.17.0
+70 verbose lock history@1.17.0 /Users/liangjiapei/.npm/cache/495a4cb4-history-1-17-0.lock
+71 silly lockFile 495a4cb4-history-1-17-0 history@1.17.0
+72 silly lockFile 495a4cb4-history-1-17-0 history@1.17.0
+73 silly lockFile 43d47a2b-history-1-x-x history@1.x.x
+74 silly lockFile 43d47a2b-history-1-x-x history@1.x.x
+75 error notarget No compatible version found: react-router@'1,x,x'
+75 error notarget Valid install targets:
+75 error notarget ["0.0.0","0.0.1","0.4.0","0.4.1","0.4.2","0.5.0","0.5.1","0.5.2","0.5.3","0.6.0","0.6.1","0.7.0","0.8.0","0.9.0","0.9.1","0.9.2","0.9.3","0.9.4","0.9.5","0.10.0","0.10.1","0.10.2","0.11.0","0.11.1","0.11.2","0.11.3","0.11.4","0.11.5","0.11.6","0.12.0","0.12.1","0.12.2","0.12.3","0.12.4","0.13.0","0.13.1","0.13.2","0.13.3","1.0.0-alpha1","1.0.0-alpha2","1.0.0-beta1","1.0.0-beta2","1.0.0-beta3","1.0.0-beta4","1.0.0-rc1","0.13.4","1.0.0-rc2","1.0.0-rc3","0.13.5","1.0.0-rc4","1.0.0","1.0.1","1.0.2","1.0.3","2.0.0-rc1","2.0.0-rc2","2.0.0-rc3","2.0.0-rc4","2.0.0-rc5","2.0.0-rc6","2.0.0","2.0.1","2.1.0","2.1.1","2.2.0","2.2.1","2.2.2","2.2.4","2.3.0","2.4.0","2.4.1","3.0.0-alpha.1"]
+75 error notarget
+75 error notarget This is most likely not a problem with npm itself.
+75 error notarget In most cases you or one of your dependencies are requesting
+75 error notarget a package version that doesn't exist.
+76 error System Darwin 15.5.0
+77 error command "/Users/liangjiapei/.nvm/v0.10.40/bin/node" "/Users/liangjiapei/.nvm/v0.10.40/bin/npm" "install" "--save" "react-router@1,x,x" "history@1.x.x"
+78 error cwd /Users/liangjiapei/360云盘/编程专区/react/learning-react/kanban-board
+79 error node -v v0.10.40
+80 error npm -v 1.4.28
+81 error code ETARGET
+82 verbose exit [ 1, true ]
