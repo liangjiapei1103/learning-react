@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import {render} from 'react-dom';
 import bankStore from './bankStore';
 import constants from './constants';
+import bankActionCreators from './bankActionCreators';
 
 class BankApp extends Component {
     handleDeposit() {
@@ -38,17 +39,9 @@ BankApp.propTypes = {
 }
 
 class BankAppContainer extends Component {
-    constructor(...args) {
-        super(...args);
-        bankStore.dispatch({type: constants.CREATE_ACCOUNT});
-        this.state = {
-            balance: bankStore.getState().balance
-        }
-    }
-
     componentDidMount() {
         this.unsubscribe = bankStore.subscribe(() =>
-            this.setState({balance: bankStore.getState().balance});
+            this.setState({balance: bankStore.getState().balance})
         );
     }
 
@@ -60,12 +53,13 @@ class BankAppContainer extends Component {
         return (
             <BankApp
                 balance= {bankStore.getState().balance }
-                onDeposite={ (amount) => bankStore.dispatch(
-                    {type: constants.DEPOSIT_INTO_ACCOUNT, amount: amount}
+                onDeposit={ (amount) => bankStore.dispatch(
+                    bankActionCreators.depositIntoAccount(amount)
                 )}
                 onWithdraw={ (amount) => bankStore.dispatch(
-                    {type: constants.WITHDRAW_FROM_ACCOUNT, amount: amount}
+                    bankActionCreators.withdrawFromAccount(amount)
                 )}
+            />
         );
     }
 }
