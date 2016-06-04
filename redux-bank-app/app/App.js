@@ -3,6 +3,7 @@ import {render} from 'react-dom';
 import bankStore from './bankStore';
 import constants from './constants';
 import bankActionCreators from './bankActionCreators';
+import { connect, Provider } from 'react-redux';
 
 class BankApp extends Component {
     handleDeposit() {
@@ -38,30 +39,51 @@ BankApp.propTypes = {
     onWithdraw: PropTypes.func
 }
 
-class BankAppContainer extends Component {
-    componentDidMount() {
-        this.unsubscribe = bankStore.subscribe(() =>
-            this.setState({balance: bankStore.getState().balance})
-        );
-    }
+// class BankAppContainer extends Component {
+//     componentDidMount() {
+//         this.unsubscribe = bankStore.subscribe(() =>
+//             this.setState({balance: bankStore.getState().balance})
+//         );
+//     }
+//
+//     componentWillUnmount() {
+//         this.unsubscribe();
+//     }
+//
+//     render() {
+//         return (
+//             <BankApp
+//                 balance= {bankStore.getState().balance }
+//                 onDeposit={ (amount) => bankStore.dispatch(
+//                     bankActionCreators.depositIntoAccount(amount)
+//                 )}
+//                 onWithdraw={ (amount) => bankStore.dispatch(
+//                     bankActionCreators.withdrawFromAccount(amount)
+//                 )}
+//             />
+//         );
+//     }
+// }
 
-    componentWillUnmount() {
-        this.unsubscribe();
-    }
-
-    render() {
-        return (
-            <BankApp
-                balance= {bankStore.getState().balance }
-                onDeposit={ (amount) => bankStore.dispatch(
-                    bankActionCreators.depositIntoAccount(amount)
-                )}
-                onWithdraw={ (amount) => bankStore.dispatch(
-                    bankActionCreators.withdrawFromAccount(amount)
-                )}
-            />
-        );
+// Generate a container app by Mapping state and dispatch to props
+const mapStateToProps = (state) => {
+    return {
+        balance: state.balance
     }
 }
 
-render(<BankAppContainer />, document.getElementById('root'));
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onDeposit: (amount) => dispatch(bankActionCreators.depositIntoAccount(amount)),
+        onWithdraw: (amount) => dispatch(bankActionCreators.withdrawFromAccount(amount))
+    }
+}
+
+const BankAppContainer = connect(mapStateToProps, mapDispatchToProps)(BankApp);
+
+render(
+    <Provider store={bankStore}>
+        <BankAppContainer />
+    </Provider>,
+    document.getElementById('root')
+);
