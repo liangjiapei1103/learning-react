@@ -24,8 +24,8 @@ const balanceReducer = (state = initialState.initialBalance, action) => {
 
 const uiReducer = (state = initialState.initialUI, action) => {
     switch (action.type) {
-        case constants.TOGGLE_INFO:
-            return update(state, { showInfo: { $apply: currentState => ! currentState }});
+        case constants.TOGGLE_EXCHANGE:
+            return update(state, { showExchange: { $apply: currentState => !currentState }});
         default:
             return state;
     }

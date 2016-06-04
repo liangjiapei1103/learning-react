@@ -36,3 +36,20 @@ h1 {
     margin: 20px 10px;
     padding: 20px 40px;
 }
+
+.info {
+  width: 330px;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #1D4F27;
+  margin: 25px auto 0 auto;
+}
+
+.info--visible {
+  
+}
+
+.info--closed {
+  height: 0px;
+  overflow: hidden;
+}

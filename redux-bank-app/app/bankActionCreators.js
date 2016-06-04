@@ -22,13 +22,13 @@ const bankActionCreators = {
     },
 
     /**
-     * Toggle the visibility of the exchange rate
-     */
-     toggleInfo() {
-         return {
-             type: constants.TOGGLE_INFO
-         };
-     }
-};
+      * Toggle the visibility of the exchange rate
+      */
+      toggleExchange() {
+        return {
+          type: constants.TOGGLE_EXCHANGE
+        };
+      }
+    };
 
 export default bankActionCreators;
