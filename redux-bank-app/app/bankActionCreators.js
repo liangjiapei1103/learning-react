@@ -12,14 +12,23 @@ const bankActionCreators = {
     },
 
     /**
-    *   @oaram {number} amount to withdraw
+    *   @param {number} amount to withdraw
     */
     withdrawFromAccount(amount) {
         return {
             type: constants.WITHDRAW_FROM_ACCOUNT,
             amount: amount
         };
-    }
+    },
+
+    /**
+     * Toggle the visibility of the exchange rate
+     */
+     toggleInfo() {
+         return {
+             type: constants.TOGGLE_INFO
+         };
+     }
 };
 
 export default bankActionCreators;
